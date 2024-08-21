@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+    blurayposter:
+        image: whitebrise/blurayposter:latest
+        container_name: blurayposter
+        volumes:
+            - /blurayposter/config:/config
+        environment:
+            - 'PUID=0'
+            - 'PGID=0'
+            - 'UMASK=000'
+            - 'TZ=Asia/Shanghai'
+        restart: always
+        tty: true
+        stdin_open: true
